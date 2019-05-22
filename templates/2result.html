@@ -1,0 +1,493 @@
+<head>
+    <link href="../static/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <link href="../static/mainresult.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous">
+    <title> RESULT form MySearch</title>
+    <a href="http://seashore.informatics.buu.ac.th/~59160139/FinalProject/PROJECT-FLASK/MyApp/templates/"><img width="300" height="150" src="../static/images/mysearch1.png" alt=""></a>
+
+    <!-- <h1><b>My Search</b></h1> -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">     -->
+    <style>
+        .demo {
+                /* background-color:rgb(255, 255, 255); */
+            }
+    
+            .pricingTable {
+                background: #fff;
+                font-family: 'Titillium Web', sans-serif;
+                text-align: center;
+                padding: 25px 25px 15px;
+                margin-top: 90px;
+                border-radius: 30px;
+                position: relative;
+            }
+    
+            .pricingTable .content {
+                background-color: #54A8DD;
+                padding: 15px 15px 50px;
+                margin-bottom: 15px;
+                border-radius: 30px 30px 150px 150px;
+            }
+    
+            .pricingTable .pricingTable-header {
+                color: #fff;
+                background: #54A8DD;
+                height: 220px;
+                width: 220px;
+                padding: 65px 0 0;
+                margin: -130px auto 15px;
+                border-radius: 50%;
+                box-shadow: 0 0 0 25px #fff inset;
+                display: block;
+            }
+    
+            .pricingTable .pricingTable-header span {
+                margin: 0 0 10px 0;
+                display: block;
+            }
+    
+            .pricingTable .title {
+                font-size: 30px;
+                font-weight: 600;
+                text-align: center;
+                text-transform: uppercase;
+                margin: 0 0 10px 0;
+            }
+    
+            .pricingTable .price-value {
+                color: #fff;
+                background: #3E85B1;
+                font-weight: 600;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 25px;
+                margin-bottom: 15px;
+            }
+    
+            .pricingTable .currency {
+                font-size: 35px;
+                vertical-align: top;
+                margin-top: -5px;
+                margin-right: -5px;
+                display: inline-block;
+            }
+    
+            .pricingTable .amount {
+                font-size: 70px;
+                line-height: 60px;
+                display: inline-block;
+            }
+    
+            .pricingTable .month {
+                font-size: 18px;
+                line-height: 30px;
+                display: block;
+            }
+    
+            .pricingTable .pricing-content {
+                color: #fff;
+                font-size: 17px;
+                line-height: 45px;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 0;
+                margin: 0 0 50px;
+                list-style: none;
+                /* width: 500px; */
+            }
+    
+            .pricingTable .pricing-content li {
+                background: rgba(255, 255, 255, 0.3);
+                margin-bottom: 10px;
+                position: relative;
+                transition: all 0.3s ease 0s;
+            }
+    
+            .pricingTable .pricingTable-signup {
+                color: #909090;
+                font-size: 30px;
+                font-weight: 600;
+                text-transform: uppercase;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+    
+            .pricingTable .pricingTable-signup:hover {
+                color: #3E85B1;
+                text-shadow: 0 0 2px #000;
+            }
+    
+            .pricingTable.red .content,
+            .pricingTable.red .pricingTable-header {
+                background: #F4765E;
+            }
+    
+            .pricingTable.red .price-value {
+                background: #EB563B;
+            }
+    
+            .pricingTable.red .pricingTable-signup:hover {
+                color: #EB563B;
+            }
+    
+            .pricingTable.blue .content,
+            .pricingTable.blue .pricingTable-header {
+                background: #5D6289;
+            }
+    
+            .pricingTable.blue .price-value {
+                background: #3F446D;
+            }
+    
+            .pricingTable.blue .pricingTable-signup:hover {
+                color: #3F446D;
+            }
+
+            .pricingTable.yel .content,
+            .pricingTable.yel .pricingTable-header {
+                background: #FFCC33;
+            }
+    
+            .pricingTable.yel .price-value {
+                background: #FFCC33;
+            }
+    
+            .pricingTable.yel .pricingTable-signup:hover {
+                color: #FFCC33;
+            }
+    
+    
+            @media only screen and (max-width: 990px) {
+                .pricingTable {
+                    margin: 70px 0 100px;
+                }
+            }
+    
+            @media only screen and (max-width: 479px) {
+                .pricingTable {
+                    padding: 15px;
+                }
+    
+                .pricingTable .pricingTable-header {
+                    height: 155px;
+                    width: 155px;
+                    padding: 33px 0 0 0;
+                    margin-top: -90px;
+                    margin-bottom: 30px;
+                    box-shadow: 0 0 0 15px #fff;
+                }
+    
+                .pricingTable .pricing-content {
+                    font-size: 15px;
+                }
+            }
+           .bgimage{
+               background-image: url(../static/images/bgre.jpg);
+               /* height: 50%; */
+               background-position: center;
+               background-repeat: no-repeat;
+               background-size: 100% 100%;
+            }
+    .input-group.md-form.form-sm.form-1 input{
+        border: 1px solid #bdbdbd;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
+    .input-group.md-form.form-sm.form-2 input {
+        border: 1px solid #bdbdbd;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+    }
+    .input-group.md-form.form-sm.form-2 input.red-border  {
+        border: 1px solid #ef9a9a;
+    }
+    .input-group.md-form.form-sm.form-2 input.lime-border  {
+        border: 1px solid #cddc39;
+    }
+    .input-group.md-form.form-sm.form-2 input.amber-border  {
+        border: 1px solid #ffca28;
+    } 
+    .search-text{
+        margin-bottom: 5%;
+    }
+</style>
+</head>
+
+<body class="bgimage">
+    <div class="container ">
+        <div class="row search-text ST">
+            <div class="offset-md-3 col-md-6">
+                {%if len1 > 0 :%}
+                <form action="http://35.198.220.177/2result" method="POST">
+                    <div class="input-group md-form form-sm form-2 pl-0 ST">
+                        <input class="form-control my-0 py-1 red-border ST " type="text" name="Search" placeholder="Search"
+                            aria-label="Search">
+                        <div class="input-group-append ST">
+                            <button class="btn btn-primary fa fa-search" type="submit"></button><!-- <span class="input-group-text red lighten-3 ST" id="basic-text1"<i aria-hidden="true"></i></span> -->
+                        </div>
+                    </div>
+                </form>
+                {%endif%}
+            </div>
+        </div>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css "> -->
+        <div class="row">
+            <div class="col-md-12 ">
+                <div style="text-align: center">
+                    <div class="tab" role="tabpanel">
+                        <!-- Nav tabs -->
+                        {%if len1 > 0 :%}
+                        <ul class="nav nav-tabs" role="tablist" style="justify-content: center">
+                            <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab"
+                                    data-toggle="tab">INVERTED INDEX</a></li>
+                            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">POSITIONAL
+                                    INDEX
+                                </a></li>
+                            {%endif%}
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content tabs">
+                            <div role="tabpanel" class="tab-pane  in active" id="Section1">
+                                {%if len1 > 0 :%}
+                                <h3>INVERTED INDEX</h3>
+                                {%endif%}
+                                <br>
+                                
+                                <div class="demo">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="offset-md-3 col-md-6">
+                                                {%if n > 0 :%}
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <form id="selectSubmit" action="{{ url_for('threshold') }}"
+                                                                method="POST">
+                                                                <select class="form-control" name="wild">
+                                                                    {% for i in w: %}
+                                                                    <option value={{ i }}>{{ i }} </option>
+                                                                    {% endfor %}
+                                                                </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <button class="btn btn-primary" type="submit">submit</button>
+
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                                {%endif%}
+                                                <!-- <center>{{ aa }}</center> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% if wi != " ": %}
+                                    <h1 class="text-center">Search : {{ wi }}</h1>
+                                    {%else:%}
+                                    <h1 class="text-center">Search : {{ aa }}</h1>
+                                    {%endif%}
+                                    {%if len1 > 0 :%}
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-6"">
+                                        <div class="
+                                            pricingTable">
+                                            <div class="content">
+                                                <div class="pricingTable-header">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <h3 class="title">Rank</h3>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                </div>
+
+                                                <ul class="pricing-content">
+                                                    {%if ni == 0:%}
+                                                    <div class="text-center"> - </div>
+                                                    {% else :%}
+                                                    {% for i in range(1,len+1): %}
+                                                    <div class="text-center"> {{ i }} </div>
+                                                    {% endfor %}
+                                                    {% endif %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- -- แบ่ง--- -->
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="pricingTable red">
+                                            <div class="content">
+                                                <div class="pricingTable-header">
+                                                    <span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                    <h3 class="title">Sim</h3>
+                                                    <span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                </div>
+
+                                                <ul class="pricing-content">
+                                                    {% if ni == 0 : %}
+                                                    <div class="text-center"> - </div>
+                                                    {% else :%}
+                                                    {%for i in sim:%}
+                                                    <div class="text-center"> {{ "%.4f"%i }}</div>
+                                                    {% endfor %}
+                                                    {% endif %}
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="pricingTable yel">
+                                            <div class="content">
+                                                <div class="pricingTable-header">
+                                                    <span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                    <h3 class="title">LINK</h3>
+                                                    <span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                </div>
+                                                <ul class="pricing-content">
+                                                    {% if ni == 0 : %}
+                                                    <div class="text-center"> Not Found!</div>
+                                                    {% else :%}
+                                                    {%for i in link:%}
+                                                    <div class="text-center"><a href="{{i}}" target="_blank"> {{ i }} </a></div>
+                                                    {% endfor %}
+                                                    {% endif %}
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ---แบ่ง---- -->
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div role="tabpanel" class="tab-pane " id="Section2">
+                            <h3>POSITIONAL INDEX</h3>
+                            <br>
+                        
+                            <div class="demo">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-6">
+                                            {%if n > 0 :%}
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="form-group">
+                                                        <form action="{{ url_for('threshold') }}" method="POST">
+                                                            <select class="form-control" name="wild">
+                                                                {% for i in w: %}
+                                                                <option value={{ i }}>{{ i }} </option>
+                                                                {% endfor %}
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary" type="submit">submit</button>
+                                                </div>
+                                                </form>
+                                            </div>
+                                            {%endif%}
+                                            <!-- <center>{{ aa }}</center> -->
+                                        </div>
+                                    </div>
+                                    <h1 class="text-center">Search : {{ aa }}</h1>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-6"">
+                                        <div class="
+                                            pricingTable">
+                                            <div class="content">
+                                                <div class="pricingTable-header">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <h3 class="title">Rank</h3>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                </div>
+
+                                                <ul class="pricing-content">
+                                                    {%if np == 0 %}
+                                                    <div class="text-center"> - </div>
+                                                    {%else:%}
+                                                    {% for i in range(1,lenPo+1): %}
+                                                    <div class="text-center"> {{ i }} </div>
+                                                    {% endfor %}
+                                                    {%endif%}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- -- แบ่ง--- -->
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="pricingTable red">
+                                            <div class="content">
+                                                <div class="pricingTable-header">
+                                                    <span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                    <h3 class="title">Sim</h3>
+                                                    <span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                </div>
+
+                                                <ul class="pricing-content">
+                                                    {% if np == 0 : %}
+                                                    <div class="text-center"> - </div>
+                                                    {% else :%}
+                                                    {%for i in simPo:%}
+                                                    <div class="text-center"> {{ "%.4f"%i }}</div>
+                                                    {%endfor%}
+                                                    {% endif %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="pricingTable yel">
+                                            <div class="content">
+                                                <div class="pricingTable-header">
+                                                    <span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                    <h3 class="title">LINK</h3>
+                                                    <span><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                                </div>
+                                                <ul class="pricing-content">
+
+                                                    {% if np == 0 : %}
+                                                    <div class="text-center"> Not Found!</div>
+                                                    {% else :%}
+                                                    {%for i in linkPo%}
+                                                    <div class="text-center"><a href="{{i}}" target="_blank"> {{ i }} </a></div>
+                                                    {% endfor %}
+                                                    {% endif %}
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {%endif%}
+                                    <!-- ---แบ่ง---- -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div role="tabpanel" class="tab-pane " id="Section3">
+                    <h3>Section 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper, magna a ultricies
+                        volutpat, mi eros viverra massa, vitae consequat nisi justo in tortor. Proin accumsan
+                        felis ac felis dapibus, non iaculis mi varius.</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    $(document).ready(function () {
+    })
+</script>

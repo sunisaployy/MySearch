@@ -1,0 +1,29 @@
+.display{
+    padding-top: 2%;
+    font-family: 'Kanit', sans-serif;
+}
+.H-text {
+    font-size: 20px;
+}
+.search-text{
+    font-size: 25px;
+    margin: 2.5% 0% 2.5% 0%;
+}
+.No-number{
+    background-color: #ef815f;
+    border-radius: 6%;
+    padding: 1.5%;
+    height: 100%;
+}
+.number-result{
+    background-color: #76a1e8;
+    border-radius: 6%;
+    padding: 1.5%;
+    height: 100%;
+}
+.link-result{
+    background-color: #54e585;
+    border-radius: 6%;
+    padding: 1.5%;
+    height: 100%;
+}
