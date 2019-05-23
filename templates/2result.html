@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
         crossorigin="anonymous">
     <title> RESULT form MySearch</title>
-    <a href="http://35.198.220.177/MySearch/templates/"><img width="300" height="150" src="../static/images/mysearch1.png" alt=""></a>
+    <a href="http://35.198.220.177:5000/"><img width="300" height="150" src="../static/images/mysearch1.png" alt=""></a>
 
     <!-- <h1><b>My Search</b></h1> -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">     -->
@@ -223,7 +223,7 @@
         <div class="row search-text ST">
             <div class="offset-md-3 col-md-6">
                 {%if len1 > 0 :%}
-                <form action="http://35.198.220.177/MySearch/templates/2result.html" method="POST">
+                <form action="http://35.198.220.177:5000/2result" method="POST">
                     <div class="input-group md-form form-sm form-2 pl-0 ST">
                         <input class="form-control my-0 py-1 red-border ST " type="text" name="Search" placeholder="Search"
                             aria-label="Search">
